@@ -1,0 +1,2263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arifa Photography-Aspirasys</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mooli&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Mooli", sans-serif;
+            background-color: #9d9b9b0f;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            width: 100%;
+            /* background: #f1e4e438; */
+            background-color: rgba(255, 255, 255, .19);
+            backdrop-filter: blur(3px);
+        }
+
+        .container {
+            width: 1200px;
+            margin: auto;
+        }
+
+        .nav_checkbox {
+            display: grid;
+            grid-template-columns: 0fr;
+            align-items: center;
+            padding: 10px 0px;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: black;
+            padding-left: 25px;
+        }
+
+        .logo h1 {
+            font-family: math;
+            font-weight: bold;
+            font-size: 40px;
+        }
+
+        .tab-nav {
+            outline: none;
+            display: none;
+        }
+
+        .label {
+            display: none;
+            color: black;
+        }
+
+        .burger {
+            width: 35px;
+            height: 5px;
+            background-color: black;
+            margin-top: 5px;
+        }
+
+        .content_nav {
+            grid-column: 6;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content_nav li {
+            display: inline-block;
+            padding: 0px 10px;
+        }
+
+        .content_nav li a {
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            color: black;
+            position: relative;
+        }
+
+        .content_nav li a::after {
+            content: '';
+            display: block;
+            height: 2px;
+            background-color: black;
+            position: absolute;
+            left: 0;
+            right: 0;
+            transform-origin: right;
+            transform: scale(0.1);
+            transition: transform ease-in-out 0.5s;
+        }
+
+        .content_nav li a:hover::after {
+            transform: scale(1.0);
+        }
+
+        .nav_checkbox button {
+            padding: 10px 30px 10px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            border: 2px solid;
+            background-color: #fff;
+            transition:all 0.5s ease-in;
+        }
+
+        .nav_checkbox button:hover {
+            background-color: black;
+            color: #fff;
+        }
+
+        @media screen and (max-width: 1280px) {
+            .container {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 1100px) {
+            .label {
+                display: grid;
+                cursor: pointer;
+                grid-column: 30;
+                padding-right: 10px;
+            }
+
+            .content_nav {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-column: 1/4;
+                text-align: center;
+                max-height: 0;
+                overflow: hidden;
+                transition: all ease-in-out 0.6s;
+            }
+
+            .nav_checkbox input:checked~.content_nav {
+                max-height: 500px;
+            }
+
+            .content_nav li {
+                padding: 15px 10px;
+                text-align: start;
+            }
+        }
+
+        .content1 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            place-items: center;
+        }
+
+        .image1 img {
+            border-radius: 48%;
+            /* margin: 7em 0px 0px 10px; */
+        }
+
+        .image3 img {
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            margin: 5em 0px 0px 0px;
+            height: 570px;
+            width: 600px;
+        }
+
+        .content2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+        }
+
+        .text {
+            animation: enter-animation 1.6s 1;
+        }
+
+        @keyframes enter-animation {
+
+
+            0% {
+                transform: translateY(-300px);
+                opacity: 0;
+
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+
+            }
+        }
+
+
+        .text h1 {
+            font-weight: bold;
+            font-size: 79px;
+            text-align: center;
+        }
+
+        .text1 h1 {
+            font-weight: bold;
+            font-size: 100px;
+            padding: 0px 0px 0px 25px;
+            text-align: start;
+            font-family: math;
+            color: #fff;
+        }
+
+        .text1 p {
+            color: #fff;
+            font-size: 20px;
+            padding: 0px 0px 5px 30px;
+        }
+
+        .text1 {
+            animation: popdown 1s ease;
+            animation-timeline: view(350px 0px);
+            animation-iteration-count: 1;
+        }
+
+        @keyframes popdown {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(0%);
+            }
+        }
+
+        .text2 img {
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+        }
+
+        .text2 p {
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .text2 {
+            width: 20%;
+            animation: appear 1.5s linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+            /* width: 34%;
+            animation: popright 1s ease;
+            animation-timeline: view(350px 0px);
+            animation-iteration-count: 1; */
+            /* overflow: hidden; */
+        }
+
+        /*@keyframes popright {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0%);
+            }
+        }*/
+
+
+
+
+        .content3 {
+    width: 80%;
+    margin: auto;
+}
+        .content4 {
+            display: flex;
+            justify-content: flex-end;
+            /* overflow: hidden; */
+            /* width: 34%;
+            animation: popright 1s ease;
+            animation-timeline: view(350px 0px);
+            animation-iteration-count: 1;
+            */
+        }
+
+        .content_section1 {
+            background-color:  #151616;
+            padding: 15px;
+            margin-bottom: 6em;
+        }
+
+        .work-text h1 {
+            font-size: 55px;
+            padding: 25px;
+            font-weight: 500;
+            display: grid;
+            place-content: center;
+        }
+
+        .work-image {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 60px;
+            grid-column-gap:30px ;
+            /* grid-template-rows: repeat(1, 0fr 1fr 0fr 0fr); */
+            place-items: center;
+            width: 80%;
+            margin: auto;
+        }
+
+        .content-section2 img {
+            height: 500px;
+            width: 500px;
+
+        }
+
+        .work {
+            animation: popdownleft 1s ease forwards;
+            animation-timeline: view(350px 0);
+            animation-iteration-count: 1;
+            margin-bottom: 10em;
+        }
+
+        @keyframes popdownleft {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        #work-id {
+            margin-top: 7em;
+        }
+
+        .card {
+            position: relative;
+
+        }
+
+        .card-body {
+            background-color: #a09c9c;
+            padding: 25px;
+            display: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .card:hover .card-body {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            cursor: pointer;
+            transition: 3s;
+        }
+        .card-img{
+            cursor: pointer;
+            overflow: hidden;
+            width: 100%;
+        }
+        .card-img img{
+            object-fit: cover;
+            transition: 1s ease;
+        }
+        .card-img img:hover{
+            transform: scale(1.2);
+            transition: 1s;
+        }
+
+
+        .Testimonial {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            border-radius: 20em;
+            padding: 95px;
+            width: 80%;
+            margin: auto;
+            animation: popdownleft 1s ease forwards;
+            animation-timeline: view(350px 0);
+            animation-iteration-count: 1;
+        }
+
+        .carousel {
+            width: 80%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 100%);
+            animation: slide 30s infinite;
+        }
+
+        .carousel-item {
+            background-color: black;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.3em;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item h1,
+        p,
+        h5 {
+            color: #fff;
+            padding: 10px;
+            line-height: 1.3;
+        }
+
+
+        @keyframes slide {
+            0% {
+                transform: translateX(-100);
+            }
+
+            20% {
+                transform: translateX(-100%);
+            }
+
+            40% {
+                transform: translateX(-200%);
+            }
+
+            /* 60% { transform: translateX(-300%); } */
+
+        }
+
+
+        .services {
+            animation: popdownleft 1s ease forwards;
+            animation-timeline: view(350px 0);
+            animation-iteration-count: 1;
+            margin-top: 7em;
+            margin-bottom: 2em;
+        }
+
+        .service-card1 img {
+            height: 250px;
+            width: 100%;
+        }
+        .service-card1{
+            width: 100%;
+            height: 100%;
+        }
+
+        .service-card {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            place-items: center;
+            padding: 20px;
+            align-items: center;
+            grid-column-gap: 20px;
+            width: 80%;
+            margin: auto;
+        }
+        .service-card1:hover{
+            transition: 1s ease;
+            transform:translateY(-50px);
+            cursor: pointer;
+        }
+        /* .service-card1{
+            width: 80%;
+        } */
+
+        .service-card1 h1 {
+            font-weight: 500;
+            font-size: 25px;
+            padding: 15px 0px 10px;
+        }
+
+        .service-card1 p {
+            font-size: 15px;
+            font-weight: lighter;
+            color: #808080;
+            padding: 0px;
+        }
+
+        .service-heading {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .service-heading h1 {
+            font-size: 60px;
+            font-weight: 500;
+            padding: 10px;
+        }
+
+        .service-heading p {
+            font-size: 20px;
+            padding: 2px;
+            color: black;
+        }
+
+        .pricing {
+            animation: popdownleft 1s ease forwards;
+            animation-timeline: view(350px 0);
+            animation-iteration-count: 1;
+            margin-bottom: 6em;
+        }
+
+        .pricing-heading {
+            text-align: center;
+            padding: 70px;
+        }
+
+        .pricing-heading h1 {
+            font-size: 60px;
+            font-weight: 500;
+            padding: 20px;
+        }
+
+        .pricing-heading p {
+            font-size: 20px;
+            padding: 2px;
+            color: black;
+        }
+
+        .pricing1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            place-items: center;
+            padding: 20px;
+            align-items: center;
+            grid-column-gap: 20px;
+            width: 80%;
+            margin: auto;
+        }
+
+        .pricing-card {
+            padding: 25px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        .pricing-card:hover{
+            transition: 1s ease;
+            transform: translateY(-50px);
+            cursor: pointer;
+        }
+
+        .pricing1 h1 {
+            font-weight: 500;
+            font-size: 32px;
+            padding: 15px 0px 10px;
+        }
+
+        .pricing1 h2 {
+            font-size: 50px;
+            padding: 10px;
+        }
+
+        .pricing1 p {
+            font-size: 16px;
+            padding: 2px;
+            color: black;
+        }
+
+        .pricing1 button {
+            background-color: black;
+            border: 2px solid black;
+            color: #fff;
+            text-align: center;
+            padding: 10px 8em 10px 8em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.5s;
+        }
+
+        .pricing1 button:hover {
+            background-color: #cccccc;
+            color: black;
+        }
+
+        .pricing1 li {
+            padding: 5px;
+        }
+
+        .shedule-meeting {
+            animation: popdownleft 1s ease forwards;
+            animation-timeline: view(350px 0);
+            animation-iteration-count: 1;
+            margin-bottom: 7em;
+        }
+
+        .contact-heading {
+            text-align: center;
+        }
+
+        .contact-heading h1 {
+            font-size: 60px;
+            font-weight: 500;
+            padding: 20px;
+        }
+
+        .contact-heading p {
+            font-size: 20px;
+            padding: 2px;
+            color: black;
+        }
+
+
+        .meeting1 {
+            display: grid;
+            margin: auto;
+            width: 60%;
+        }
+
+
+        .contact-form {
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            text-align: left;
+            background-color: #fff;
+            border-radius: 20px;
+            margin-top: 60px;
+            padding: 50px;
+            display: grid;
+            grid-gap: 15px;
+        }
+        .contact-form select {
+    background-color: #8080801f;
+    /* background-color: #9d9b9b0f; */
+    /* border: none; */
+}
+
+        .contact-form input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .contact-form button {
+            padding: 15px 25px 15px 25px;
+            border-radius: 30px;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #cccccc;
+            color: black;
+        }
+
+        .footer {
+            background-color: black;
+            color: #fff;
+            animation: popdownleft 1s ease forwards;
+            animation-timeline: view(350px 0);
+            animation-iteration-count: 1;
+        }
+
+        .section1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #808080;
+            padding: 20px;
+            font-size: 20px;
+        }
+        /* .section1 h1{
+            margin-left: 120px;
+        }
+        .section1 p{
+            margin-right: 45px;
+        } */
+
+        /* .section2 {
+            display: grid;
+            justify-items: center;
+            grid-template-columns: repeat(3, 1fr);
+            border-bottom: 1px solid #808080;
+            padding: 3rem 10px 3rem 10px;
+        } */
+        .section2 {
+    width: 98vw;
+    grid-template-columns: repeat(11, 3vw);
+    grid-template-rows: repeat(5, 4vw);
+    display: grid;
+    justify-items: center;
+    /* grid-template-columns: repeat(58, 29vw); */
+    /* border-bottom: 1px solid #808080; */
+    /* padding: 3rem 10px 3rem 10px; */
+}
+.footer-section {
+    grid-area: 2 / 1 / span 2 / span 4;
+}
+.footer-section1 {
+    grid-area: 2 / 18 / span 1 / span 2;
+}
+.footer-section2 {
+    /* width: 17vw; */
+    grid-area: 2 / 32 / span 1 / span 1;
+}
+
+        .section2 li {
+            list-style: none;
+            color: #808080;
+            padding: 8px;
+        }
+
+        .section2 li:hover {
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .section2 p {
+            color: #808080;
+        }
+
+        .section2 p:hover {
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .w-footer {
+            border: 2px solid white;
+            padding: 7px;
+            margin: 10px;
+            border-radius: 50px;
+        }
+
+        .w-footer input {
+            padding: 3px;
+            background: transparent;
+            border: none;
+            color: #fff;
+        }
+
+        .w-footer button {
+            padding: 5px 15px 5px 15px;
+            border-radius: 50px;
+            background: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+            cursor: pointer;
+        }
+
+        .w-footer button:hover {
+            background-color: #fff;
+            color: black;
+        }
+
+        .section3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* border-bottom: 1px solid white; */
+            padding: 20px;
+            font-size: 18px;
+            font-weight: lighter;
+            border-top: 1px solid #808080;
+        }
+
+        .section3 p,
+        a {
+            text-decoration: none;
+            color: #808080;
+            cursor: pointer;
+        }
+
+        .section3 p:hover {
+            color: #fff;
+        }
+
+
+        .showcase {
+    background-color: black;
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10rem;
+    animation: popdownleft 1s ease forwards;
+            animation-timeline: view(350px 0);
+            animation-iteration-count: 1;
+}
+
+.showcase-heading {
+    grid-area: 2 / 4 / span 3 / span 6;
+    text-align: center;
+}
+
+ .showcase-heading h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    animation: appear 1.5s linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+}
+
+.grid-container {
+    display: grid;
+    width: 96vw;
+    grid-template-columns: repeat(12, 7.5vw); 
+    grid-template-rows: repeat(16, 3vw); 
+    grid-column-gap: 7px;
+    grid-row-gap: 10px;
+    margin: auto;
+}
+    @keyframes appear {
+from {
+    opacity:0;
+    scale: 0.5;
+}
+to {
+    opacity: 1;
+    scale: 1;
+}
+    }
+  
+
+
+    /* gap: 20px; */
+   
+    /* width: 53%;
+    margin: auto;
+    position: relative; */
+
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    animation: appear 1.5s linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+    /* border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    margin: auto; */
+}
+ /* .grid-item:hover img {
+    transform: scale(1.05); 
+ } */
+/*@media screen and (min-width:1920px){
+    .grid-container{
+        width: 35%;
+    }
+}*/
+/* Specific positioning to achieve the layout in the screenshot */
+
+#grid-item1 {
+    grid-area: 2 / 2 / span 4 / span 2;
+    /* grid-column: 1 / 2;
+    grid-row: 1 / 2; */
+}
+
+#grid-item2 {
+    grid-area: 7 / 3 / span 4 / span 2;
+    /* grid-column: 2 / 3;
+    grid-row: 1 / 2; */
+}
+
+#grid-item3 {
+    grid-area: 7 / 5 / span 4 / span 2;
+    
+}
+
+#grid-item4 {
+    grid-area: 7 / 7 / span 4 / span 2;
+}
+
+#grid-item5 {
+    grid-area: 7 / 9 / span 4 / span 2;
+}
+
+#grid-item6 {
+    grid-area: 2 / 10 / span 4 / span 2;
+}
+
+#grid-item7 {
+    grid-area: 12 / 4 / span 4 / span 2;
+}
+
+#grid-item8 {
+    grid-area: 12 / 6 / span 4 / span 2;
+}
+
+#grid-item9 {
+    grid-area: 12 / 8 / span 4 / span 2;
+}
+
+
+        @media screen and (max-width: 1100px) {
+
+.logo h1{
+    font-size: 45px;
+}
+.content1 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 5em;
+    place-content: center;
+    justify-items: center;
+}
+
+.content_nav {
+grid-column: 1/7;
+}
+.text1 h1 {
+font-size: 50px;
+}
+.text1 p{
+font-size: 20px;
+}
+.content4 {
+display: flex;
+justify-content: space-evenly;
+}
+.text2 img{
+width: 100%;
+}
+.text2 p {
+width: 400px;
+}
+.content-section2 img {
+height: 500px;
+width: 100%;
+}
+/* .Testimonial{
+display: none;
+} */
+.work-image {
+grid-template-columns: repeat(1, 1fr);
+}
+#work-id {
+margin-top: 0px;
+}
+.service-card {
+grid-template-columns: repeat(1, 1fr);
+}
+.service-card1 img {
+width: 100%;
+height: 100%;
+}
+.service-card1 h1 {
+font-size: 35px;
+}
+.service-card1 p {
+font-size: 25px;
+}    
+.pricing-heading {
+text-align: center;
+}
+.pricing1 {
+grid-template-columns: repeat(1, 1fr);
+padding: unset;
+align-items: center;
+row-gap: 15px;
+}
+.pricing1 h1 {
+padding: 2px;
+}
+.meeting1 {
+width: 100%;
+}
+.contact-form{
+padding: 20px;
+margin-top: 30px;
+}
+.section1 {
+flex-direction: column;
+
+}
+.section1 h1{
+    margin: unset;
+}
+.section1 p{
+    margin: unset;
+}
+.section2 {
+grid-template-columns: repeat(1, 1fr);
+}
+.section3 {
+flex-direction: column;
+}
+.showcase-heading h1 {
+    font-size: 57px;
+}
+}
+
+
+
+        @media screen and (max-width: 990px) {
+
+.logo h1{
+    font-size: 45px;
+}
+.content1 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 5em;
+    place-content: center;
+    justify-items: center;
+}
+
+.content_nav {
+grid-column: 1/7;
+}
+.text1 h1 {
+font-size: 50px;
+}
+.text1 p{
+font-size: 20px;
+}
+.content4 {
+display: flex;
+justify-content: space-evenly;
+}
+.text2 img{
+width: 100%;
+}
+.text2 p {
+width: 400px;
+}
+.content-section2 img {
+height: 500px;
+width: 100%;
+}
+.Testimonial{
+display: none;
+}
+.work-image {
+grid-template-columns: repeat(1, 1fr);
+}
+#work-id {
+margin-top: 0px;
+}
+.service-card {
+grid-template-columns: repeat(1, 1fr);
+grid-row-gap: 50px;
+}
+.service-card1 img {
+width: 100%;
+height: 100%;
+}
+.service-card1 h1 {
+font-size: 35px;
+}
+.service-card1 p {
+font-size: 25px;
+}    
+.pricing-heading {
+text-align: center;
+}
+.pricing1 {
+grid-template-columns: repeat(1, 1fr);
+padding: unset;
+align-items: center;
+row-gap: 55px;
+}
+.pricing1 h1 {
+padding: 2px;
+}
+.meeting1 {
+width: 100%;
+}
+.contact-form{
+padding: 20px;
+margin-top: 30px;
+}
+.section1 {
+flex-direction: column;
+}
+.section2 {
+grid-template-columns: repeat(1, 1fr);
+}
+.section3 {
+flex-direction: column;
+}
+.showcase-heading h1 {
+    font-size: 57px;
+}
+.grid-container {
+    grid-template-columns: repeat(12, 6.5vw); 
+    grid-template-rows: repeat(100, 3vw); 
+}
+#grid-item1 {
+    grid-area: 8 / 2 / span 8 / span 6;
+    /* grid-column: 1 / 2;
+    grid-row: 1 / 2; */
+}
+
+#grid-item2 {
+    grid-area: 8 / 8 / span 8 / span 6;
+    /* grid-column: 2 / 3;
+    grid-row: 1 / 2; */
+}
+
+#grid-item3 {
+    grid-area: 16 / 2 / span 8 / span 6;
+    
+}
+
+#grid-item4 {
+    grid-area: 16 / 8 / span 8 / span 6;
+}
+
+#grid-item5 {
+    grid-area: 24 / 2 / span 8 / span 6;
+}
+
+#grid-item6 {
+    grid-area: 24 / 8 / span 8 / span 6;
+}
+
+#grid-item7 {
+    grid-area: 32 / 2 / span 8 / span 6;
+}
+
+#grid-item8 {
+    grid-area: 32 / 8 / span 8 / span 6;
+}
+
+#grid-item9 {
+    grid-area: 40 / 3 / span 10 / span 10;
+}
+.showcase-heading {
+    grid-area: 2 / 3 / span 2 / span 8;
+    }
+
+}
+
+
+        @media screen and (max-width: 768px) {
+
+            .logo h1{
+                font-size: 45px;
+            }
+            .content1 {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                padding-top: 5em;
+                place-content: center;
+                justify-items: center;
+            }
+
+        .content_nav {
+            grid-column: 1/7;
+        }
+       .text1 h1 {
+    font-size: 50px;
+       }
+       .text1 p{
+        font-size: 20px;
+       }
+       .content4 {
+    display: flex;
+    justify-content: space-evenly;
+       }
+       .text2 img{
+    width: 100%;
+       }
+       .text2 p {
+    width: 400px;
+}
+.content-section2 img {
+    height: 500px;
+    width: 100%;
+}
+.Testimonial{
+    display: none;
+}
+.work-image {
+    grid-template-columns: repeat(1, 1fr);
+}
+#work-id {
+    margin-top: 0px;
+}
+.service-card {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 50px;
+
+}
+.service-card1 img {
+    width: 100%;
+    height: 100%;
+}
+.service-card1 h1 {
+    font-size: 35px;
+}
+.service-card1 p {
+    font-size: 25px;
+}    
+.pricing-heading {
+    text-align: center;
+}
+.pricing1 {
+    grid-template-columns: repeat(1, 1fr);
+    padding: unset;
+    align-items: center;
+    row-gap: 55px;
+}
+.pricing1 h1 {
+    padding: 2px;
+}
+.meeting1 {
+    width: 100%;
+}
+.contact-form{
+    padding: 20px;
+    margin-top: 30px;
+}
+.section1 {
+    flex-direction: column;
+}
+.section2 {
+    font-size: 30px;
+    grid-template-columns: repeat(30, 19vw);
+    grid-template-rows: repeat(30, 4vw);
+}
+.footer-section {
+    grid-area: 2 / 2 / span 1 / span 3;
+}
+.footer-section1 {
+    grid-area: 11 / 3 / span 1 / span 3;
+}
+.footer-section2 {
+    grid-area: 23 / 2 / span 1 / span 4;
+}
+.section3 {
+    flex-direction: column;
+}
+.showcase-heading h1 {
+    font-size: 40px;
+}
+.grid-container {
+    grid-template-columns: repeat(12, 6.5vw); 
+    grid-template-rows: repeat(100, 3vw); 
+}
+#grid-item1 {
+    grid-area: 7 / 2 / span 10 / span 10;
+    /* grid-column: 1 / 2;
+    grid-row: 1 / 2; */
+}
+
+#grid-item2 {
+    grid-area: 17 / 2 / span 10 / span 10;
+    /* grid-column: 2 / 3;
+    grid-row: 1 / 2; */
+}
+
+#grid-item3 {
+    grid-area: 27 / 2 / span 10 / span 10;
+    
+}
+
+#grid-item4 {
+    grid-area: 37 / 2 / span 10 / span 10;
+}
+
+#grid-item5 {
+    grid-area: 47 / 2 / span 10 / span 10;
+}
+
+#grid-item6 {
+    grid-area: 57 / 2 / span 10 / span 10;
+}
+
+#grid-item7 {
+    grid-area: 67 / 2 / span 10 / span 10;
+}
+
+#grid-item8 {
+    grid-area: 77 / 2 / span 10 / span 10;
+}
+
+#grid-item9 {
+    grid-area: 87 / 2 / span 10 / span 10;
+}
+.showcase-heading {
+    grid-area: 2 / 3 / span 2 / span 8;
+    }
+
+      }
+
+
+        @media screen and (max-width: 560px) {
+
+            .logo h1{
+                font-size: 45px;
+            }
+            .content1 {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                padding-top: 5em;
+                place-content: center;
+                justify-items: center;
+            }
+
+            .text h1 {
+                font-size: 30px;
+            }
+
+        .content_nav {
+            grid-column: 1/9;
+        }
+       #img2{
+        margin: auto;
+       }
+       .image3 img{
+        width: 550px;
+       }
+       .text1 h1 {
+    font-size: 50px;
+       }
+       .text1 p{
+        font-size: 20px;
+       }
+       .content4 {
+    display: flex;
+    justify-content: space-evenly;
+       }
+       .text2 img{
+    width: 100%;
+       }
+       .text2 p {
+    width: 300px;
+}
+.work-text h1 {
+    font-size: 40px;
+    padding: 0px;
+    place-content: center;
+}
+.content-section2 img {
+    height: 500px;
+    width: 100%;
+}
+.Testimonial{
+    display: none;
+}
+
+.work-image {
+    place-items: self-start;
+    grid-template-columns: repeat(1, 1fr);
+}
+#work-id {
+    margin-top: 0px;
+}
+.service-heading {
+    text-align: center;
+}
+.service-card {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 45px;
+    padding: unset;
+}
+.service-card1 img {
+    width: 100%;
+    height: 100%;
+}
+.service-card1 h1 {
+    font-size: 35px;
+}
+.service-card1 p {
+    font-size: 25px;
+}    
+.pricing-heading {
+    text-align: center;
+}
+.pricing-heading h1 {
+    font-size: 70px;
+    padding: unset;
+}
+.pricing-heading p {
+    font-size: 20px;
+    padding: unset;
+}
+.pricing1 {
+    grid-template-columns: repeat(1, 1fr);
+    padding: unset;
+    align-items: center;
+    row-gap: 55px;
+}
+.pricing-card {
+    padding: 15px;
+}
+.pricing1 h1 {
+    padding: 2px;
+}
+.contact-heading h1 {
+    font-size: 35px;
+    padding: 3px;
+}
+.contact-heading p {
+    font-size: 20px;
+}
+.meeting1 {
+    width: 100%;
+}
+.contact-form{
+    padding: 20px;
+    margin-top: 30px;
+}
+.contact-form input, select, textarea {
+    padding: 5px;
+}
+.section1 {
+    display: flex;
+    padding: 10px;
+    font-size: 20px;
+    flex-direction: column;
+}
+.section1 p{
+    padding: unset;
+}
+.section2 {
+    font-size: 20px;
+    grid-template-columns: repeat(30, 19vw);
+    grid-template-rows: repeat(30, 4vw);
+}
+.footer-section {
+    grid-area: 2 / 2 / span 1 / span 3;
+}
+.footer-section1 {
+    grid-area: 11 / 3 / span 1 / span 3;
+}
+.footer-section2 {
+    grid-area: 23 / 2 / span 1 / span 4;
+}
+/* .section2 {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 1rem 10px 1rem 10px;
+} */
+.section3 {
+    font-size: 20px;
+    flex-direction: column;
+    padding: 10px;
+}
+.showcase-heading h1 {
+    font-size: 33px;
+}
+.grid-container {
+    grid-template-columns: repeat(12, 6.5vw); 
+    grid-template-rows: repeat(100, 3vw); 
+}
+#grid-item1 {
+    grid-area: 7 / 2 / span 10 / span 10;
+    /* grid-column: 1 / 2;
+    grid-row: 1 / 2; */
+}
+
+#grid-item2 {
+    grid-area: 17 / 2 / span 10 / span 10;
+    /* grid-column: 2 / 3;
+    grid-row: 1 / 2; */
+}
+
+#grid-item3 {
+    grid-area: 27 / 2 / span 10 / span 10;
+    
+}
+
+#grid-item4 {
+    grid-area: 37 / 2 / span 10 / span 10;
+}
+
+#grid-item5 {
+    grid-area: 47 / 2 / span 10 / span 10;
+}
+
+#grid-item6 {
+    grid-area: 57 / 2 / span 10 / span 10;
+}
+
+#grid-item7 {
+    grid-area: 67 / 2 / span 10 / span 10;
+}
+
+#grid-item8 {
+    grid-area: 77 / 2 / span 10 / span 10;
+}
+
+#grid-item9 {
+    grid-area: 87 / 2 / span 10 / span 10;
+}
+.showcase-heading {
+    grid-area: 2 / 3 / span 2 / span 8;
+    }
+      }
+
+
+      @media screen and (max-width: 430px) {
+            .logo h1{
+                font-size: 35px;
+            }
+            .content1 {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                padding-top: 5em;
+                place-content: center;
+                justify-items: center;
+            }
+
+            .text h1 {
+                font-size: 30px;
+            }
+
+        .content_nav {
+            grid-column: 1/17;
+        }
+        .image1 img{
+            display: grid;
+        }
+        
+       #img2{
+        margin: auto;
+        
+       }
+       .image3 img{
+        width: 100%;
+       }
+       .text1 h1 {
+    font-size: 50px;
+    padding: unset;
+       }
+       .text1 p{
+        font-size: 15px;
+        padding: unset;
+       }
+       .content4 {
+    display: flex;
+    justify-content: center;
+       }
+       .text2 img{
+        margin-left: -18px;
+    width: 200px;
+       }
+       .text2 p {
+    width: 200px;
+}
+.work-text h1 {
+    font-size: 40px;
+    padding: 0px;
+    place-content: center;
+}
+.content-section2 img {
+    height: 350px;
+}
+.Testimonial{
+    display: none;
+}
+.work-image {
+    place-items: self-start;
+    grid-template-columns: repeat(1, 1fr);
+}
+#work-id {
+    margin-top: 0px;
+}
+.service-heading {
+    text-align: center;
+    padding: unset;
+}
+.service-heading h1 {
+    font-size: 60px;
+}
+.service-heading p {
+    font-size: 15px;
+}
+.service-card {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 55px;
+    padding: unset;
+}
+.service-card1 img {
+    width: 100%;
+    height: 100%;
+}
+.service-card1 p {
+    font-size: 15px;
+}    
+.pricing-heading {
+    text-align: center;
+    padding: unset;
+    margin-bottom: 10px;
+}
+.pricing-heading h1 {
+    font-size: 60px;
+    /* text-align: start; */
+    padding: unset;
+}
+.pricing-heading p {
+    font-size: 20px;
+    padding: unset;
+    margin-bottom:65px ;
+}
+.pricing1 {
+    grid-template-columns: repeat(1, 1fr);
+    padding: unset;
+    align-items: center;
+    row-gap: 55px;
+}
+.pricing-card {
+    padding: 15px;
+}
+.pricing1 h1 {
+    padding: 2px;
+}
+.contact-heading h1 {
+    font-size: 35px;
+    padding: 3px;
+}
+.contact-heading p {
+    font-size: 20px;
+}
+.meeting1 {
+    width: 100%;
+}
+.contact-form{
+    padding: 20px;
+    margin-top: 30px;
+}
+.contact-form input, select, textarea {
+    padding: 5px;
+}
+.section1 {
+    display: flex;
+    padding: 10px;
+    font-size: 20px;
+    flex-direction: column;
+}
+.section1 p{
+    padding: unset;
+}
+.section2 {
+    font-size: 20px;
+    grid-template-columns: repeat(30, 19vw);
+    grid-template-rows: repeat(50, 4vw);
+}
+.footer-section {
+    grid-area: 2 / 1 / span 1 / span 3;
+}
+.footer-section1 {
+    grid-area: 19 / 1 / span 2 / span 3;
+}
+.footer-section2 {
+    grid-area: 40 / 1 / span 1 / span 5;
+}
+/* .section2 {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 1rem 10px 1rem 10px;
+} */
+.section3 {
+    font-size: 20px;
+    flex-direction: column;
+    padding: 10px;
+}
+.showcase-heading h1 {
+    font-size: 24px;
+}
+.grid-container {
+    grid-template-columns: repeat(12, 6.5vw); 
+    grid-template-rows: repeat(100, 3vw); 
+}
+#grid-item1 {
+    grid-area: 7 / 2 / span 10 / span 10;
+    /* grid-column: 1 / 2;
+    grid-row: 1 / 2; */
+}
+
+#grid-item2 {
+    grid-area: 17 / 2 / span 10 / span 10;
+    /* grid-column: 2 / 3;
+    grid-row: 1 / 2; */
+}
+
+#grid-item3 {
+    grid-area: 27 / 2 / span 10 / span 10;
+    
+}
+
+#grid-item4 {
+    grid-area: 37 / 2 / span 10 / span 10;
+}
+
+#grid-item5 {
+    grid-area: 47 / 2 / span 10 / span 10;
+}
+
+#grid-item6 {
+    grid-area: 57 / 2 / span 10 / span 10;
+}
+
+#grid-item7 {
+    grid-area: 67 / 2 / span 10 / span 10;
+}
+
+#grid-item8 {
+    grid-area: 77 / 2 / span 10 / span 10;
+}
+
+#grid-item9 {
+    grid-area: 87 / 2 / span 10 / span 10;
+}
+      }
+
+        @media screen and (max-width: 360px) {
+            .logo h1{
+                font-size: 35px;
+            }
+            .content1 {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                padding-top: 5em;
+                place-content: center;
+                justify-items: center;
+            }
+
+            .text h1 {
+                font-size: 30px;
+            }
+
+        .content_nav {
+            grid-column: 1/17;
+        }
+        .image1 img{
+            display: grid;
+        }
+        
+       #img2{
+        margin: auto;
+        
+       }
+       .image3 img{
+        width: 100%;
+       }
+       .text1 h1 {
+    font-size: 50px;
+    padding: unset;
+       }
+       .text1 p{
+        font-size: 15px;
+        padding: unset;
+       }
+       .content4 {
+    display: flex;
+    justify-content: center;
+       }
+       .text2 img{
+        margin-left: -18px;
+    width: 200px;
+       }
+       .text2 p {
+    width: 200px;
+}
+.work-text h1 {
+    font-size: 40px;
+    padding: 0px;
+    place-content: center;
+}
+.content-section2 img {
+    height: 350px;
+    width: 300px;
+}
+.Testimonial{
+    display: none;
+}
+.work-image {
+    place-items: self-start;
+    grid-template-columns: repeat(1, 1fr);
+}
+#work-id {
+    margin-top: 0px;
+}
+.service-heading {
+    text-align: center;
+    margin-bottom: 55px;
+    padding: unset;
+}
+.service-heading h1 {
+    font-size: 60px;
+}
+.service-heading p {
+    font-size: 15px;
+}
+.service-card {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 45px;
+    padding: unset;
+}
+.service-card1 img {
+    width: 100%;
+    height: 100%;
+}
+.service-card1 p {
+    font-size: 15px;
+}    
+.pricing-heading {
+    text-align: center;
+    padding: unset;
+    margin-bottom:65px ;
+}
+.pricing-heading h1 {
+    font-size: 60px;
+    /* text-align: start; */
+    padding: unset;
+}
+.pricing-heading p {
+    font-size: 20px;
+    padding: unset;
+}
+.pricing1 {
+    grid-template-columns: repeat(1, 1fr);
+    padding: unset;
+    align-items: center;
+    row-gap: 55px;
+}
+.pricing-card {
+    padding: 15px;
+}
+.pricing1 h1 {
+    padding: 2px;
+}
+.contact-heading h1 {
+    font-size: 35px;
+    padding: 3px;
+}
+.contact-heading p {
+    font-size: 20px;
+}
+.meeting1 {
+    width: 100%;
+}
+.contact-form{
+    padding: 20px;
+    margin-top: 30px;
+}
+.contact-form input, select, textarea {
+    padding: 5px;
+}
+.section1 {
+    display: flex;
+    padding: 10px;
+    font-size: 20px;
+    flex-direction: column;
+}
+.section1 p{
+    padding: unset;
+}
+.section2 {
+    font-size: 20px;
+    grid-template-columns: repeat(30, 19vw);
+    grid-template-rows: repeat(50, 4vw);
+}
+.footer-section {
+    grid-area: 2 / 1 / span 1 / span 3;
+}
+.footer-section1 {
+    grid-area: 19 / 1 / span 2 / span 3;
+}
+.footer-section2 {
+    grid-area: 40 / 1 / span 1 / span 5;
+}
+.section3 {
+    font-size: 20px;
+    flex-direction: column;
+    padding: 10px;
+}
+.showcase-heading h1 {
+    font-size: 24px;
+}
+.grid-container {
+    grid-template-columns: repeat(12, 6.5vw); 
+    grid-template-rows: repeat(100, 3vw); 
+}
+#grid-item1 {
+    grid-area: 7 / 2 / span 10 / span 10;
+    /* grid-column: 1 / 2;
+    grid-row: 1 / 2; */
+}
+
+#grid-item2 {
+    grid-area: 17 / 2 / span 10 / span 10;
+    /* grid-column: 2 / 3;
+    grid-row: 1 / 2; */
+}
+
+#grid-item3 {
+    grid-area: 27 / 2 / span 10 / span 10;
+    
+}
+
+#grid-item4 {
+    grid-area: 37 / 2 / span 10 / span 10;
+}
+
+#grid-item5 {
+    grid-area: 47 / 2 / span 10 / span 10;
+}
+
+#grid-item6 {
+    grid-area: 57 / 2 / span 10 / span 10;
+}
+
+#grid-item7 {
+    grid-area: 67 / 2 / span 10 / span 10;
+}
+
+#grid-item8 {
+    grid-area: 77 / 2 / span 10 / span 10;
+}
+
+#grid-item9 {
+    grid-area: 87 / 2 / span 10 / span 10;
+}
+
+      }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav_checkbox">
+                <a href="#" class="logo">
+                    <h1>Arifa</h1>
+                </a>
+                <input type="checkbox" id="tab-nav" class="tab-nav">
+                <label for="tab-nav" class="label">
+                    <div class="burger"></div>
+                    <div class="burger"></div>
+                    <div class="burger"></div>
+                </label>
+                <ul class="content_nav">
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#aboue me">ABOUT ME</a></li>
+                    <li><a href="#work">WORKS</a></li>
+                    <li><a href="#showcase">SHOW CASE</a></li>
+                    <li><a href="#grid-item9">TESTIMONIAL</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="#pricing">PRICING</a></li>
+                    <a href="#shedule-meeting"><button>SCHEDULE A MEETING</button></a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="content_section" id="home">
+        <div class="content1">
+            <div class="content2">
+                <div class="text">
+                    <h1>Arifa photography</h1>
+                </div>
+                <div class="image1"  id="aboue me">
+                    <img src="home-img2.jpg" alt="" height="250px" width="300px" id="img1">
+                    <img src="home-img3.jpg" alt="" height="250px" width="300px" id="img2">
+                </div>
+            </div>
+            <div class="image3" >
+                <img src="home-img1.jpg" alt="">
+            </div>
+        </div>
+       
+    </section>
+   
+    <div class="content_section1">
+        <div class="content3">
+            <div class="text1"  >
+                <h1>Arifa</h1>
+                <h1 > Sultana</h1>
+                <P >Freelance Photographer</P>
+            </div>
+        </div>
+        <div class="space-between"></div>
+        <div class="content4">
+            <div class="text2">
+                <img src="About-img2.jpg" alt="" height="250px" width="250px">
+                <p  id="work">I'm Arifa Sultana, and this is my little corner of the internet. Whether you stumbled upon my site by
+                    chance or were directed here, I'm glad you made it. Through the years, I've worn many hats -
+                    entrepreneur, artist, mentor, traveler, and the list goes on.</p>
+            </div>
+        </div>
+    </div>
+    <section class="work" >
+        <div class="content-section2">
+            <div class="work-text">
+                <h1>Selected Works</h1>
+            </div>
+            <div class="work-image">
+                <div class="work-image1">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="work-img1.jpg" alt="">
+                        </div>
+                        <div class="card-body">
+                            <p>0ct 5,2023</p>
+                            <h1>ULTRICIES</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-image1" id="work-id">
+                    <div class="card">
+                        <div class="card-img">
+                        <img src="work-img2.jpg" alt="">
+                        </div>
+                        <div class="card-body">
+                            <p>0ct 5,2023</p>
+                            <h1>CONSECTETUR</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-image1">
+                    <div class="card">
+                        <div class="card-img">
+                        <img src="work-img3.jpg" alt="">
+                        </div>
+                        <div class="card-body">
+                            <p>0ct 5,2023</p>
+                            <h1>MALKO</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-image1" id="work-id">
+                    <div class="card">
+                        <div class="card-img">
+                        <img src="work-img4.jpg" alt="">
+                        </div>
+                        <div class="card-body">
+                            <p>0ct 5,2023</p>
+                            <h1 >SENSEYA</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="showcase"  id="showcase">
+        
+    
+        <div class="grid-container">
+            <div class="showcase-heading">
+                <h1>Frame the World, One Shot at a Time</h1>
+            </div>
+            <div class="grid-item" id="grid-item1"><img src="Showcase-img1.jpg" alt="Image 1"></div>
+            <div class="grid-item" id="grid-item2"><img src="showcase-img2.jpg" alt="Image 2"></div>
+            <div class="grid-item" id="grid-item3"><img src="showcase-img3.jpg" alt="Image 3"></div>
+            <div class="grid-item" id="grid-item4"><img src="showcase-img4.jpg" alt="Image 4"></div>
+            <div class="grid-item" id="grid-item5"><img src="showcase-img5.jpg" alt="Image 5"></div>
+            <div class="grid-item" id="grid-item6"><img src="showcase-img6.jpg" alt="Image 6"></div>
+            <div class="grid-item" id="grid-item7"><img src="showcase-img7.jpg" alt="Image 7"></div>
+            <div class="grid-item" id="grid-item8"><img src="showcase-img8.jpg" alt="Image 8"></div>
+            <div class="grid-item" id="grid-item9"><img src="showcase-img9.jpg" alt="Image 9"></div>
+        </div>
+    </section>
+
+
+
+    <section class="Testimonial" id="Testimonial">
+        <div class="carousel">
+            <div class="carousel-wrapper">
+                <div class="carousel-item">
+                    <p>Their blend of creativity and efficiency turned our café space into a local gem. Their designs
+                        don’t just look good – they function perfectly for our needs.</p>
+                    <div class="client">
+                        <img src="avatar-img1.png" alt="" height="90px" width="90px">
+                        <h1>Maria Gonzales</h1>
+                        <h5>Founder, Urban Blossom Cafés</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <p>They transformed my scattered ideas into a warm, functional, and beautiful home. Their attention
+                        to detail and personal touch made all the difference.</p>
+                    <div class="client">
+                        <img src="avatar-img2.png" alt="" height="90px" width="90px">
+                        <h1>Aisha Patel</h1>
+                        <h5>Owner, Homeowner</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <p>Team surpassed our expectations with their innovative and sustainable designs. Their
+                        professionalism and expertise made our ambitious project a success. Highly recommended.</p>
+                    <div class="client">
+                        <img src="avatar-img3.png" alt="" height="90px" width="90px">
+                        <h1>Liam Thompson</h1>
+                        <h5>CEO, Thompson</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+        <section class="services" id="services">
+        <div class="service-heading">
+            <h1>Services</h1>
+            <p>I see the world through a unique lens, and I invite you to step into my world,</p>
+            <p>where every image is a cherished memory waiting to be framed.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-card1">
+                <div class="service-img">
+                    <img src="service-img1.jpg" alt="">
+                </div>
+                <div class="service-card-body">
+                    <h1>WEDDING SHOOTS</h1>
+                    <p>Your wedding is a blend of fleeting moments and emotions. Capture them forever with our dedicated
+                        wedding photography. Every 'I Do' deserves a lasting memory. Book now for timeless snapshots.
+                    </p>
+                </div>
+            </div>
+            <div class="service-card1">
+                <div class="service-img">
+                    <img src="home-img3.jpg" alt="">
+                </div>
+                <div class="service-card-body">
+                    <h1>POTRAIT PHOTOGRAPHY</h1>
+                    <p>Portraits tell stories, revealing the depths of one's character. With us, every shot embodies
+                        your unique essence. Schedule today for portraits that truly resonate editing service and potential services in expertise .
+                    </p>
+                </div>
+            </div>
+            <div class="service-card1">
+                <div class="service-img">
+                    <img src="service-img3.jpg" alt="">
+                </div>
+                <div class="service-card-body">
+                    <h1>PRODUCT PHOTOGRAPHY</h1>
+                    <p>Enhance your images to their fullest potential with our expert editing services. Elevate every
+                        shot, from subtle touch-ups to detailed transformations. Choose quality. Choose our editing.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pricing" id="pricing">
+        <div class="pricing-heading">
+            <h1>Pricing</h1>
+            <p>Pricing that suits your needs</p>
+        </div>
+        <div class="pricing1">
+            <div class="pricing-card">
+                <h1>Premium Package</h1>
+                <p>Experience comprehensive coverage with our Premium Package. From the first look to the last dance,
+                    we're there to capture every precious moment.</p>
+                <h2>$ 2500</h2>
+                <button>BOOK NOW</button>
+                <li>Full-day coverage</li>
+                <li>2 photographers</li>
+                <li>High-resolution edited images</li>
+                <li>Online gallery</li>
+                <li>Engagement session included</li>
+            </div>
+            <div class="pricing-card">
+                <h1>Basic Package</h1>
+                <p>Perfect for intimate ceremonies, our Basic Package ensures the key moments of your special day are
+                    beautifully captured. It's simplicity with quality.</p>
+                <h2>$ 1200</h2>
+                <button>BOOK NOW</button>
+                <li>Up to 4 hours of coverage</li>
+                <li>1 photographer</li>
+                <li>High-resolution edited images</li>
+                <li>Online gallery</li>
+                <li>Engagement session included</li>
+            </div>
+            <div class="pricing-card">
+                <h1>Deluxe Package</h1>
+                <p>For those seeking an all-encompassing experience, our Deluxe Package offers top-tier photography
+                    services. Including drone shots, pre-wedding moments.</p>
+                <h2>$ 3500</h2>
+                <button>BOOK NOW</button>
+                <li>Full-day coverage</li>
+                <li>3 photographers</li>
+                <li>High-resolution edited images</li>
+                <li>Online gallery</li>
+                <li  id="shedule-meeting">Pre-wedding photo sessions</li>
+            </div>
+        </div>
+    </section>
+    <section class="shedule-meeting">
+        <div class="contact-heading">
+            <h1>Schedule a Meeting</h1>
+            <p>Fill in the form below and I will get back to you.</p>
+        </div>
+        <div class="meeting1">
+            <form action="" class="contact-form">
+                <div><label for="Name">Name</label></div>
+                <input type="text">
+                <div><label for="Number">Contact Number</label></div>
+                <input type="number">
+                <div><label for="Email">Email Address</label></div>
+                <input type="email">
+                <div><label for="text">Service you are looking for?</label></div>
+                <select id="Service-Area" name="Service-Area" data-name="Service Area" class="w-select">
+                    <option value="">Select one...</option>
+                    <option value="First">Wedding Photography</option>
+                    <option value="Second">Portrait Photoshoot</option>
+                    <option value="Third">Video Editing</option>
+                    <option value="Photoshoot">Photoshoot</option>
+                </select>
+                <div><label for="text">Project Budget</label></div>
+                <select id="Project-Budget" name="Project-Budget" data-name="Project Budget" class="w-select">
+                    <option value="">Select one...</option>
+                    <option value="First">$ 2999 </option>
+                    <option value="Second">$ 3999 </option>
+                    <option value="Third">$ 7999</option>
+                </select>
+                <div><label for="text">Tell me bit about your project</label></div>
+                <textarea id="message-3" name="message-3" maxlength="5000" data-name="Message 3" placeholder="Message"
+                    class="w-input"></textarea>
+                <div><a href="#"><button>SUBMIT REQUEST</button></a></div>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <section class="footer">
+            <div class="section1">
+                <h1>Arifa Sultana</h1>
+                <P>Freelance Photographer</P>
+            </div>
+            <div class="section2">
+                <div class="footer-section">
+                    <p>1086 6th Ave, New York</p>
+                    <p>(+1) 45 96 123 13</p>
+                    <p> 1086 6th Ave, New York</p>
+                </div>
+                <div class="footer-section1">
+                    <h1>Quick Links</h1>
+                    <li>Home</li>
+                    <li>Style Guide</li>
+                    <li>licenses</li>
+                    <li>Change Log</li>
+                </div>
+                <div class="footer-section2">
+                    <h1>Subscribe to my Newsletter</h1>
+                    <div class="w-footer">
+                        <input type="email" placeholder="YOUR EMAIL">
+                        <button>SUBCRIBE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="section3">
+                <h5>© Arifa Sultana, 2024</h5>
+                <a href="#">
+                    <p>Powered by: Aspirasys</p>
+                </a>
+            </div>
+        </section>
+    </footer>
+
+</body>
+
+</html>
